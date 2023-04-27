@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 
-import FeaturedCourses from "../../components/FeaturedCourses/FeaturedCourses";
-import PersonalizedLearning from "../../components/PersonalizedLearning/PersonalizedLearning";
-import SuccessStories from "../../components/SuccessStories/SuccessStories";
-import CallToAction from "../../components/CallToAction/CallToAction";
+import PersonalizedLearning from "../../components/Home/PersonalizedLearning/PersonalizedLearning";
 import Footer from "../../components/Footer/Footer";
-import Hero from "../../components/Hero/Hero";
+import Hero from "../../components/Home/Hero/Hero";
+import FeaturedCourses from "../../components/Home/FeaturedCourses/FeaturedCourses";
+import SuccessStories from "../../components/Home/SuccessStories/SuccessStories";
+import { CallToAction } from "@mui/icons-material";
 
 const HomePage: React.FC = () => {
   return (

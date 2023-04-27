@@ -12,6 +12,7 @@ import { Box } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
 import theme from "../../theme/theme";
+import { Link } from "react-router-dom";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   color: theme.palette.primary.contrastText,
@@ -73,15 +74,19 @@ const NavBar = () => {
             alignItems: "center",
           }}
         >
-          <StyledButton variant="text" theme={theme}>
-            Home
-          </StyledButton>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <StyledButton variant="text" theme={theme}>
+              Home
+            </StyledButton>
+          </Link>
           <StyledButton variant="text" theme={theme}>
             Courses
           </StyledButton>
-          <StyledButton variant="text" theme={theme}>
-            About
-          </StyledButton>
+          <Link to="/about" style={{ textDecoration: "none" }}>
+            <StyledButton variant="text" theme={theme}>
+              About
+            </StyledButton>
+          </Link>
           <StyledButton variant="text" theme={theme}>
             Contact
           </StyledButton>
@@ -126,9 +131,13 @@ const NavBar = () => {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose}>Home</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/">
+              Home
+            </MenuItem>
             <MenuItem onClick={handleClose}>Courses</MenuItem>
-            <MenuItem onClick={handleClose}>About</MenuItem>
+            <MenuItem onClick={handleClose} component={Link} to="/about">
+              About
+            </MenuItem>
             <MenuItem onClick={handleClose}>Contact</MenuItem>
             <MenuItem onClick={handleClose}>Login</MenuItem>
             <MenuItem onClick={handleClose}>Sign Up</MenuItem>
