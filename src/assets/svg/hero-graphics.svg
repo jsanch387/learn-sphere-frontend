@@ -1,0 +1,4 @@
+<!-- src/assets/hero-graphic.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <path fill="#4db6ac" d="M43 26c0-6.617-5.383-12-12-12s-12 5.383-12 12c0 .074.002.147.004.22C11.514 26.9 10 29.295 10 32c0 4.337 3.663 8 8 8h26c4.337 0 8-3.663 8-8s-3.663-8-8-8h-1z"/>
+</svg>

@@ -1,0 +1,36 @@
+import { Box, styled } from "@mui/system";
+
+export const CallToActionContainer = styled(Box)(({ theme }) => ({
+  position: "relative",
+  minHeight: "400px",
+  color: theme.palette.common.white,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: theme.spacing(4),
+  textAlign: "center",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    backgroundImage: `url("https://images.unsplash.com/photo-1519681393784-d120267933ba")`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    zIndex: -1,
+    opacity: 0.5,
+  },
+  "&::after": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    zIndex: -1,
+  },
+}));
