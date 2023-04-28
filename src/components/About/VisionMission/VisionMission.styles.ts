@@ -1,10 +1,17 @@
 import { Container, styled } from "@mui/system";
 import { Box, Button, Grid } from "@mui/material";
 
-export const VisionMissionWrapper = styled(Container)(({ theme }) => ({
+export const VisionMissionWrapper = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(6),
   paddingBottom: theme.spacing(6),
   color: theme.palette.primary.contrastText,
+  background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.light} 100%)`,
+  width: "100%",
+  display: "flex",
+  justifyContent: "center",
+}));
+
+export const InnerContainer = styled(Container)(({ theme }) => ({
   "& h1": {
     marginBottom: theme.spacing(4),
   },
@@ -17,7 +24,7 @@ export const StyledIcon = styled("div")(({ theme }) => ({
   color: theme.palette.secondary.main,
   marginBottom: theme.spacing(4),
   "& svg": {
-    fontSize: "3rem",
+    fontSize: "4rem",
     marginRight: theme.spacing(1),
   },
 }));
@@ -30,6 +37,7 @@ export const StatementContainer = styled(Grid)(({ theme }) => ({
   textAlign: "center",
   "& h2": {
     marginBottom: theme.spacing(5),
+    fontWeight: "bold",
   },
 }));
 
@@ -38,7 +46,7 @@ export const StatementList = styled("ul")(({ theme }) => ({
   marginBottom: theme.spacing(4),
   paddingLeft: theme.spacing(4),
   paddingRight: theme.spacing(2),
-  textAlign: "left", // add this line
+  textAlign: "left",
   "& li": {
     marginBottom: theme.spacing(2),
   },

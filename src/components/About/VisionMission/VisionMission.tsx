@@ -11,28 +11,48 @@ import {
   StatementContainer,
   StatementList,
   CallToAction,
+  InnerContainer,
 } from "./VisionMission.styles";
+import { useInView } from "react-intersection-observer";
 
 const VisionMission: React.FC = () => {
+  const [inViewRef, inView] = useInView({
+    triggerOnce: true,
+  });
+
   return (
     <VisionMissionWrapper>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <Typography variant="h3" component="h1" align="center" gutterBottom>
-          Empowering Learners Worldwide
-        </Typography>
-        <Grid container spacing={4} maxWidth="none">
-          <Grid item xs={12} md={6}>
+      <InnerContainer ref={inViewRef}>
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
+        >
+          <Typography
+            variant="h4"
+            component="h2"
+            align="center"
+            gutterBottom
+            pb={5}
+          >
+            Empowering Learners Worldwide
+          </Typography>
+        </motion.div>
+        <Grid container spacing={4} maxWidth="none" justifyContent="center">
+          <Grid item xs={12} sm={6}>
             <StyledIcon>
-              <VisionIcon fontSize="large" />
+              <VisionIcon fontSize="inherit" />
             </StyledIcon>
             <StatementContainer item xs={12}>
-              <Typography variant="h4" component="h2">
-                Our Vision
-              </Typography>
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                <Typography variant="h4" component="h2">
+                  Our Vision
+                </Typography>
+              </motion.div>
               <StatementList>
                 <li>
                   Revolutionize online learning with personalized, AI-driven
@@ -49,14 +69,20 @@ const VisionMission: React.FC = () => {
               </StatementList>
             </StatementContainer>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6}>
             <StyledIcon>
-              <MissionIcon fontSize="large" />
+              <MissionIcon fontSize="inherit" />
             </StyledIcon>
             <StatementContainer item xs={12}>
-              <Typography variant="h4" component="h2">
-                Our Mission
-              </Typography>
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                <Typography variant="h4" component="h2">
+                  Our Mission
+                </Typography>
+              </motion.div>
               <StatementList>
                 <li>
                   Empower individuals to reach their full potential with a
@@ -76,19 +102,25 @@ const VisionMission: React.FC = () => {
           </Grid>
         </Grid>
         <StyledIcon>
-          <LearningIcon fontSize="large" />
-          <PeopleIcon fontSize="large" />
+          <LearningIcon fontSize="inherit" />
+          <PeopleIcon fontSize="inherit" />
         </StyledIcon>
-        <Typography variant="h6" component="p" align="center" gutterBottom>
-          Join our community of lifelong learners and unlock your potential
-          today!
-        </Typography>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <Typography variant="h6" component="p" align="center" gutterBottom>
+            Join our community of lifelong learners and unlock your potential
+            today!
+          </Typography>
+        </motion.div>
         <Grid container justifyContent="center">
           <CallToAction variant="contained" color="secondary" size="large">
             Start Learning Now
           </CallToAction>
         </Grid>
-      </motion.div>
+      </InnerContainer>
     </VisionMissionWrapper>
   );
 };
